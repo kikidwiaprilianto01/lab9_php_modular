@@ -1,0 +1,152 @@
+/* =========================================================
+   Layout dasar (template bersama)
+   ========================================================= */
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    background: #f4f6f8;
+    color: #263238;
+}
+
+.container {
+    max-width: 960px;
+    margin: 30px auto;
+    background: #fff;
+    padding: 24px;
+}
+
+header, footer { padding: 16px; background: #eaf2f8; }
+header h1 { margin: 0 0 4px; font-size: 24px; }
+header p { margin: 0; color: #546e7a; }
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e5e5e5;
+}
+nav a { color: #145a86; text-decoration: none; padding-bottom: 2px; }
+nav a:hover { text-decoration: underline; }
+nav a.active { font-weight: bold; border-bottom: 2px solid #145a86; }
+
+main { min-height: 220px; padding: 16px 0; }
+footer { text-align: center; font-size: 14px; }
+footer p { margin: 0; }
+
+h2 { margin-top: 0; padding-bottom: 5px; border-bottom: 1px solid #e5e5e5; }
+a { color: #145a86; }
+.muted { color: #90a4ae; font-size: 12px; }
+
+/* =========================================================
+   Tabel
+   ========================================================= */
+.table-wrap { overflow-x: auto; }
+
+table { border-collapse: collapse; width: 100%; }
+table th,
+table td { border: 1px solid #e5e5e5; padding: 6px 8px; }
+table th { text-align: center; background: #f7fafc; }
+table img { max-width: 80px; height: auto; display: block; margin: 0 auto; }
+td.angka { text-align: right; white-space: nowrap; }
+td.tengah { text-align: center; }
+td.aksi { white-space: nowrap; }
+td.aksi a { margin-right: 8px; }
+a.link-hapus { color: #c62828; }
+
+/* =========================================================
+   Form
+   ========================================================= */
+.input { display: flex; flex-wrap: wrap; align-items: flex-start; margin-bottom: 12px; }
+.input label { flex: 0 0 150px; padding-top: 5px; }
+
+.input input[type="text"],
+.input input[type="number"],
+.input input[type="email"],
+.input select,
+.input textarea {
+    width: 260px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font: inherit;
+}
+.input textarea { resize: vertical; }
+
+.error-text {
+    flex-basis: 100%;
+    margin: 4px 0 0 150px;
+    color: #c62828;
+}
+
+.input-extra { margin: 0 0 12px 150px; }
+.preview { max-width: 120px; height: auto; border: 1px solid #e5e5e5; }
+.gambar-lama { margin: 8px 0 0; }
+.gambar-lama figcaption { color: #546e7a; font-size: 12px; margin-top: 4px; }
+
+.submit { margin-left: 150px; }
+
+/* =========================================================
+   Tombol dan pesan
+   ========================================================= */
+.btn {
+    display: inline-block;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 4px;
+    font: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-primary { background: #145a86; color: #fff; }
+.btn-primary:hover { background: #0f4567; }
+.btn-danger { background: #c62828; color: #fff; }
+.btn-danger:hover { background: #a11f1f; }
+.btn-secondary { background: #eceff1; color: #263238; }
+.btn-secondary:hover { background: #dfe4e7; }
+
+.alert {
+    padding: 10px 12px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.alert-success { background: #e8f5e9; border-color: #c8e6c9; color: #1b5e20; }
+.alert-error { background: #ffebee; border-color: #ffcdd2; color: #b71c1c; }
+
+/* =========================================================
+   Dashboard dan konfirmasi hapus
+   ========================================================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 20px;
+}
+.card { padding: 14px; border: 1px solid #e5e5e5; border-radius: 4px; background: #f7fafc; }
+.card-label { display: block; color: #546e7a; font-size: 12px; margin-bottom: 6px; }
+.card strong { font-size: 20px; }
+
+.konfirmasi { display: flex; gap: 16px; align-items: flex-start; }
+.konfirmasi img { max-width: 100px; height: auto; border: 1px solid #e5e5e5; }
+.konfirmasi p { margin-top: 0; }
+
+/* =========================================================
+   Layar kecil
+   ========================================================= */
+@media (max-width: 600px) {
+    .container { margin: 0; padding: 16px; }
+    .input { display: block; }
+    .input label { display: block; padding-top: 0; margin-bottom: 4px; }
+    .error-text { display: block; }
+    .input input[type="text"],
+    .input input[type="number"],
+    .input input[type="email"],
+    .input select,
+    .input textarea { width: 100%; }
+    .error-text, .input-extra, .submit { margin-left: 0; }
+    .konfirmasi { flex-direction: column; }
+}
